@@ -7,15 +7,14 @@
 </head>
 <body>
     <?php
-      // Vérifie si la requête est de type POST (après soumission du formulaire)
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-         // Récupère l'extension du fichier
+    
         $fileExtension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-        // Vérifie si l'extension est différente de "pdf"
+     
         if (strtolower($fileExtension) != "pdf") {
             echo "Seuls les fichiers PDF sont autorisés.";
         } 
-        // Vérifie si la taille du fichier dépasse 1Mo
+        // Vérifie si la taille du fichier 
         elseif ($_FILES['file']['size'] > 1000000) { 
             echo "Le fichier ne doit pas dépasser 1Mo.";
         } 
@@ -26,10 +25,10 @@
         }
     }
     ?>
-    <!-- Formulaire permettant d'envoyer un fichier PDF -->
+    
     <form action="" method="post" enctype="multipart/form-data">
          <!-- Champ permettant de sélectionner un fichier PDF -->
-        <label for="file">Sélectionner un fichier PDF :</label>
+        <label for="file">Sélect un fichier PDF </label>
         <input type="file" name="file" accept=".pdf" required>
          <!-- Bouton d'envoi du formulaire -->
         <input type="submit" value="Envoyer">

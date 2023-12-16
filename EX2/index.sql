@@ -1,4 +1,3 @@
--- Q1. Création de la base de données et de la table
 
 CREATE DATABASE IF NOT EXISTS MyDataBase;
 
@@ -11,7 +10,7 @@ CREATE TABLE IF NOT EXISTS PRODUIT (
     PRIX INT(5)
 );
 
--- Q2. Insertion de données dans la table
+-- Q2. 
 INSERT INTO PRODUIT (Id, PNOM, COULEUR, POIDS, PRIX) VALUES
 (1, 'Produit1', 'Rouge', '3 Kg', 250),
 (2, 'Produit2', 'Vert', '6 Kg', 400),
@@ -20,23 +19,23 @@ INSERT INTO PRODUIT (Id, PNOM, COULEUR, POIDS, PRIX) VALUES
 (5, 'Produit5', 'Noir', '5 Kg', 450),
 (6, 'Produit6', 'Blanc', '1 Kg', 150);
 
--- Q3 Sélection de tous les produits de la table
+-- Q3 
 SELECT * FROM PRODUIT;
 
--- Q4 Sélection des produits dont le prix est supérieur à 300DH, triés par prix
+-- q4
 SELECT * FROM PRODUIT WHERE PRIX > 300 ORDER BY PRIX;
 
--- Q5 Affichage du nom et de la couleur des produits dont le poids est inférieur à 5 Kg, triés par prix
+-- Q5
 SELECT PNOM, COULEUR FROM PRODUIT WHERE CAST(SUBSTRING(POIDS, 1, LENGTH(POIDS) - 2) AS DECIMAL) < 5 ORDER BY PRIX;
 
 
--- Q6. Modification du prix du produit dont l'ID est 3
+-- Q6. 
 UPDATE PRODUIT SET PRIX = 320 WHERE Id = 3;
 
--- Q7 Suppression du dernier produit de la table
+-- Q7 
 DELETE FROM PRODUIT ORDER BY Id DESC LIMIT 1;
 
--- Q8. Suppression de la table PRODUIT
+-- Q8
 DROP TABLE IF EXISTS PRODUIT;
 
 
