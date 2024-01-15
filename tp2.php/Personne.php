@@ -62,7 +62,7 @@ class Personne {
     }
   
     public function getPrenom() {
-    
+      return $this->prenom;
     }
   
     public function setPrenom($prenom) {
